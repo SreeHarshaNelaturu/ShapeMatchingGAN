@@ -13,7 +13,7 @@ def setup(opts):
     netTexture = TextureGenerator(n_layers=6)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print("Using:",device)
+    #print("Using:",device)
     
     netGlyph.load_state_dict(torch.load(opts["structure_model"], map_location=device))
     netTexture.load_state_dict(torch.load(opts["texture_model"], map_location=device))
@@ -51,12 +51,3 @@ def stylize_text(model, inputs):
 
 if __name__ == '__main__':
     runway.run()
-
-
-    
-
-    
-
-
-
-
